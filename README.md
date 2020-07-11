@@ -39,5 +39,5 @@ python ./main.py
 
 - (Optional), run with docker. 
 ```sh
-> docker-compose up
+docker-compose up
 ```
