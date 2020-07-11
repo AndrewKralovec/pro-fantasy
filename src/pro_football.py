@@ -25,4 +25,13 @@ def parse_pgl(response):
     columns = list(filter(lambda x: x != None, [
         None if item == '\n' else item.get_text() for item in header]))
 
-    return columns
+    data = []
+    rows = results_body.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+
+        content = list(filter(lambda x: x != None, [
+            None if item == '\n' else item.get_text() for item in cols]))
+        data.append(content)
+
+    return (columns, data)
