@@ -1,4 +1,4 @@
-import src.fantasy_football as api
+import src.pro_football as api
 
 
 if __name__ == "__main__":
