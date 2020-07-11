@@ -23,7 +23,7 @@ def parse_pgl(response):
 
     header = results_thead.find_all('tr')[1]
     columns = list(filter(lambda x: x != None, [
-        None if item == '\n' else item.get_text() for item in header]))
+        try_get_text(item) for item in header]))
 
     data = []
     rows = results_body.find_all('tr')
@@ -36,7 +36,14 @@ def parse_pgl(response):
             continue
 
         content = scope + list(filter(lambda x: x != None, [
-            None if item == '\n' else item.get_text() for item in cols]))
+            try_get_text(item) for item in cols]))
         data.append(content)
 
     return (columns, data)
+
+
+def try_get_text(item):
+    try:
+        return None if item == '\n' else item.get_text()
+    except:
+        return None
