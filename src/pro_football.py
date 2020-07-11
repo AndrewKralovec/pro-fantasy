@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 from bs4 import BeautifulSoup
 
 REMOTE_API = 'https://www.pro-football-reference.com'
@@ -42,6 +43,11 @@ def parse_pgl(response):
 
     return (columns, data)
 
+
+def to_csv(file_name, table):
+    (columns, data) = table
+    dataFrame = pd.DataFrame(data=data, columns=columns)
+    dataFrame.to_csv(file_name)
 
 def try_get_text(item):
     try:
