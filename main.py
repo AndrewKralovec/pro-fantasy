@@ -31,6 +31,8 @@ def parse_args(args):
 
 def main(argv):
     query = vars(parse_args(argv))
+    
+    # Remove the non api query string options
     output = query['output']
     file_name = query['file_name']
     del query['output']
