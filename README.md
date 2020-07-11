@@ -33,4 +33,11 @@ pip install -r requirements.txt
 > You're now setup
 
 ## Usage
-python .\main.py
+```sh
+python ./main.py
+```
+
+- (Optional), run with docker. 
+```sh
+> docker-compose up
+```
