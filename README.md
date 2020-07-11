@@ -19,7 +19,7 @@ cd my-app
 **2. Remove project git files:**
 
 ```sh
-rm -rf .git && git init && npm init
+rm -rf .git && git init
 ```
 
 
