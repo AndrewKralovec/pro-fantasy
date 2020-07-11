@@ -8,7 +8,9 @@ REMOTE_API = 'https://www.pro-football-reference.com'
 def fetch_pgl_stats(options):
     response = requests.get(
         '{0}/play-index/pgl_finder.cgi'.format(REMOTE_API),
-        params={'request': 1, **options}
+        params={'request': 1, 'match': 'game', 'is_starter': 'E', 'game_type': 'R',
+                'c5val': 1.0, 'season_start': 1, 'season_end': -1, **options}
+
     )
     response.raise_for_status()
 
