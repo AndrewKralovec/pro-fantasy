@@ -2,7 +2,7 @@ import src.pro_football as api
 
 
 if __name__ == "__main__":
-    print(api.fetch_pgl_stats({
+    print(api.parse_pgl(api.fetch_pgl_stats({
         'request': 1,
         'match': 'game',
         'year_min': 2018,
@@ -18,4 +18,4 @@ if __name__ == "__main__":
         'week_num_max': 99,
         'c5val': 1.0,
         'order_by': 'fantasy_points',
-    }))
+    })))
