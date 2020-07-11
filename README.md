@@ -32,5 +32,5 @@ pip install -r requirements.txt
 > Dependencies done installing!
 > You're now setup
 
-### Usage
+## Usage
 python .\main.py
