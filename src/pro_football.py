@@ -45,11 +45,17 @@ def parse_pgl(response):
 
     return (columns, data)
 
+## TODO: Add some console table styling
+def to_console(table):
+    (columns, data) = table
+    dataFrame = pd.DataFrame(data=data, columns=columns)
+    return dataFrame.to_string()
 
 def to_csv(file_name, table):
     (columns, data) = table
     dataFrame = pd.DataFrame(data=data, columns=columns)
     dataFrame.to_csv(file_name)
+    return 'The csv was created successfully!'
 
 def try_get_text(item):
     try:
