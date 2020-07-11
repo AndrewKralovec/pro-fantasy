@@ -29,7 +29,10 @@ def parse_pgl(response):
     rows = results_body.find_all('tr')
     for row in rows:
         cols = row.find_all('td')
-
+        # HTML will repeast headers
+        if not len(cols):
+            continue
+        
         content = list(filter(lambda x: x != None, [
             None if item == '\n' else item.get_text() for item in cols]))
         data.append(content)
