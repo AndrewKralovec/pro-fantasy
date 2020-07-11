@@ -19,4 +19,10 @@ def parse_pgl(response):
     results_thead = results_tbl.find('thead')
     results_body = results_tbl.find('tbody')
 
-    return results_tbl
+    # NOTE: Ignore fist tr
+
+    header = results_thead.find_all('tr')[1]
+    columns = list(filter(lambda x: x != None, [
+        None if item == '\n' else item.get_text() for item in header]))
+
+    return columns
