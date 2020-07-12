@@ -39,7 +39,7 @@ def main(argv):
     del query['file_name']
 
     if output == 'console':
-        print(api.to_console(api.parse_pgl(api.fetch_pgl_stats(query))))
+        return api.to_console(api.parse_pgl(api.fetch_pgl_stats(query)))
     elif output == 'csv':
         return api.to_csv('{0}.{1}'.format(file_name, output), api.parse_pgl(
             api.fetch_pgl_stats(query)))
