@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 def parse_args(args):
     parser = ArgumentParser(description='')
     parser.add_argument('--output', help='output format type',
-                        choices=['csv', 'console'], required=False, default='console')
+                        choices=['csv', 'console', 'pdf'], required=False, default='pdf')
     parser.add_argument('--file_name', help='',
                         required=False, default='output')
     # Request options
@@ -41,7 +41,10 @@ def main(argv):
     if output == 'console':
         print(api.to_console(api.parse_pgl(api.fetch_pgl_stats(query))))
     elif output == 'csv':
-        return api.to_csv('%s.csv' % file_name, api.parse_pgl(
+        return api.to_csv('{0}.{1}'.format(file_name, output), api.parse_pgl(
+            api.fetch_pgl_stats(query)))
+    elif output == 'pdf':
+        return api.to_pdf('{0}.{1}'.format(file_name, output), api.parse_pgl(
             api.fetch_pgl_stats(query)))
 
 

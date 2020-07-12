@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+from .pdf import main as pdf
 
 REMOTE_API = 'https://www.pro-football-reference.com'
 
@@ -62,3 +63,8 @@ def try_get_text(item):
         return None if item == '\n' else item.get_text()
     except:
         return None
+
+
+def to_pdf(file_name, table):
+    out = pdf(file_name, table)
+    return out
