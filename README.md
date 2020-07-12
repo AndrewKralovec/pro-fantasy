@@ -1,11 +1,6 @@
 # pro-fantasy
-<<<<<<< HEAD
 pro-football-reference.com web scraper.
 Python web scraper for www.pro-football-reference.com (currently). Exports data in console, csv, and pdf format (using pure python).
-=======
-pro-football-reference.com web scraper. 
-Python web scraper for www.pro-football-reference.com (currenlty). Exports data in console, csv, and pdf formate (using pure python).
->>>>>>> 9f9bce735b7e48d3f82440c6272bbf6a098a1977
 
 ## Quick-Start Guide
 
