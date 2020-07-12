@@ -41,6 +41,8 @@ python ./main.py
 - (Optional), run with docker. 
 ```sh
 docker-compose up
+```
+help
 ```sh
 python .\main.py --help
 usage: main.py [-h] [--output {csv,console,pdf}] [--file_name FILE_NAME]
