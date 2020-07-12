@@ -1,5 +1,6 @@
 # pro-fantasy
 pro-football-reference.com web scraper. 
+Python web scraper for www.pro-football-reference.com (currenlty). Exports data in console, csv, and pdf formate (using pure python).
 
 ## Quick-Start Guide
 
