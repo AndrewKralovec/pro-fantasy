@@ -15,7 +15,7 @@ def parse_args(args):
     parser.add_argument('--year_max', help='ending value for the years range in the search query',
                         required=False, default=2019)
     parser.add_argument('--pos', '--position', nargs='+',
-                        help='positions for the search query. Defaults to all postions', required=False, default=['QB', 'WR', 'RB', 'TE', 'OL', 'DL', 'LB', 'DB'])
+                        help='positions for the search query. Defaults to all positions', required=False, default=['QB', 'WR', 'RB', 'TE', 'OL', 'DL', 'LB', 'DB'])
     parser.add_argument('--game_num_min', help='',
                         required=False, default=0)
     parser.add_argument('--game_num_max', help='',
