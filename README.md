@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```sh
-python ./main.py
+python main.py
 ```
 
 - (Optional), run with docker. 
@@ -44,7 +44,7 @@ docker-compose up
 ```
 help
 ```sh
-python .\main.py --help
+python main.py --help
 usage: main.py [-h] [--output {csv,console,pdf}] [--file_name FILE_NAME]
                [--year_min YEAR_MIN] [--year_max YEAR_MAX]
                [--pos POS [POS ...]] [--game_num_min GAME_NUM_MIN]
