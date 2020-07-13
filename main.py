@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 def parse_args(args):
     parser = ArgumentParser(description='')
     parser.add_argument('--output', help='output format type',
-                        choices=['csv', 'console', 'pdf'], required=False, default='csv')
+                        choices=['csv', 'console', 'pdf'], required=False, default='pdf')
     parser.add_argument('--file_name', help='',
                         required=False, default='output')
     # Request options
@@ -31,21 +31,24 @@ def parse_args(args):
 
 def main(argv):
     query = vars(parse_args(argv))
-    
+
     # Remove the non api query string options
     output = query['output']
     file_name = query['file_name']
     del query['output']
     del query['file_name']
 
+    table = api.parse_pgl(api.fetch_pgl_stats(query))
+
+    # An valid output type is enforced in the args
     if output == 'console':
-        return api.to_console(api.parse_pgl(api.fetch_pgl_stats(query)))
-    elif output == 'csv':
-        return api.to_csv('{0}.{1}'.format(file_name, output), api.parse_pgl(
-            api.fetch_pgl_stats(query)))
+        return api.to_console(table)
+
+    doc = '{0}.{1}'.format(file_name, output)
+    if output == 'csv':
+        return api.to_csv(doc, table)
     elif output == 'pdf':
-        return api.to_pdf('{0}.{1}'.format(file_name, output), api.parse_pgl(
-            api.fetch_pgl_stats(query)))
+        return api.to_pdf(doc, table)
 
 
 if __name__ == '__main__':
