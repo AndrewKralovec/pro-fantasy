@@ -1,14 +1,14 @@
 import sys
 import src.pro_football as api
 from argparse import ArgumentParser
-from src.io import string, csv
+from src.io import string, csv, JSON
 from src.pdf import main as pdf
 
 
 def parse_args(args):
     parser = ArgumentParser(description='')
     parser.add_argument('--output', help='output format type',
-                        choices=['csv', 'console', 'pdf'], required=False, default='pdf')
+                        choices=['csv', 'console', 'pdf', 'json'], required=False, default='console')
     parser.add_argument('--file_name', help='',
                         required=False, default='output')
     # Request options
@@ -51,6 +51,8 @@ def main(argv):
         return csv(doc, table)
     elif output == 'pdf':
         return pdf(doc, table)
+    elif output == 'json':
+        return JSON(doc, table)
 
 
 if __name__ == '__main__':
