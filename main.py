@@ -1,6 +1,8 @@
 import sys
 import src.pro_football as api
 from argparse import ArgumentParser
+from src.io import string, csv
+from src.pdf import main as pdf
 
 
 def parse_args(args):
@@ -42,13 +44,13 @@ def main(argv):
 
     # An valid output type is enforced in the args
     if output == 'console':
-        return api.to_console(table)
+        return string(table)
 
     doc = '{0}.{1}'.format(file_name, output)
     if output == 'csv':
-        return api.to_csv(doc, table)
+        return csv(doc, table)
     elif output == 'pdf':
-        return api.to_pdf(doc, table)
+        return pdf(doc, table)
 
 
 if __name__ == '__main__':

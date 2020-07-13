@@ -1,7 +1,5 @@
 import requests
-import pandas as pd
 from bs4 import BeautifulSoup
-from .pdf import main as pdf
 
 REMOTE_API = 'https://www.pro-football-reference.com'
 
@@ -46,25 +44,9 @@ def parse_pgl(response):
 
     return (columns, data)
 
-## TODO: Add some console table styling
-def to_console(table):
-    (columns, data) = table
-    dataFrame = pd.DataFrame(data=data, columns=columns)
-    return dataFrame.to_string()
-
-def to_csv(file_name, table):
-    (columns, data) = table
-    dataFrame = pd.DataFrame(data=data, columns=columns)
-    dataFrame.to_csv(file_name)
-    return 'The csv was created successfully!'
 
 def try_get_text(item):
     try:
         return None if item == '\n' else item.get_text()
     except:
         return None
-
-
-def to_pdf(file_name, table):
-    out = pdf(file_name, table)
-    return out
