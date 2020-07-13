@@ -1,6 +1,6 @@
 # pro-fantasy
 pro-football-reference.com web scraper.
-Python web scraper for www.pro-football-reference.com (currently). Exports data in console, csv, and pdf format (using pure python).
+Python web scraper for www.pro-football-reference.com (currently). Exports data in console, csv, json, and pdf format (using pure python).
 
 ## Quick-Start Guide
 
@@ -45,7 +45,7 @@ docker-compose up
 help
 ```sh
 python main.py --help
-usage: main.py [-h] [--output {csv,console,pdf}] [--file_name FILE_NAME]
+usage: main.py [-h] [--output {csv,console,pdf,json}] [--file_name FILE_NAME]
                [--year_min YEAR_MIN] [--year_max YEAR_MAX]
                [--pos POS [POS ...]] [--game_num_min GAME_NUM_MIN]
                [--game_num_max GAME_NUM_MAX] [--week_num_min WEEK_NUM_MIN]
@@ -53,7 +53,7 @@ usage: main.py [-h] [--output {csv,console,pdf}] [--file_name FILE_NAME]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --output {csv,console,pdf}
+  --output {csv,console,pdf,json}
                         output format type
   --file_name FILE_NAME
   --year_min YEAR_MIN   starting value for the years range in the search query
