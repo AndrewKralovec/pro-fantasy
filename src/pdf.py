@@ -22,5 +22,5 @@ def main(file_name, table):
     elements.append(t)
     # Write the document to disk
     doc.build(elements)
-    return ('done')
+    return 'The pdf was created successfully!'
 
