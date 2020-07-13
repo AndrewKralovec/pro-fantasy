@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 def parse_args(args):
     parser = ArgumentParser(description='')
     parser.add_argument('--output', help='output format type',
-                        choices=['csv', 'console', 'pdf'], required=False, default='pdf')
+                        choices=['csv', 'console', 'pdf'], required=False, default='csv')
     parser.add_argument('--file_name', help='',
                         required=False, default='output')
     # Request options
